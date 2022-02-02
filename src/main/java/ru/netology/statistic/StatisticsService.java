@@ -6,7 +6,7 @@ public class StatisticsService {
         long current_max_index = 0;
         long current_max = incomes[0];
         for (long income : incomes) {
-            if (current_max < income)
+            if (current_max <= income)
                 current_max = income;
         }
         return current_max;
@@ -25,10 +25,9 @@ public class StatisticsService {
 
     public long findAverage(long[] incomes) {
         long sum = 0;
-        long current_max = incomes[0];
         for (long income : incomes){
             sum = sum += income;
             }
-        return sum / incomes.length  ;
+        return sum / incomes.length;
     }
 }
